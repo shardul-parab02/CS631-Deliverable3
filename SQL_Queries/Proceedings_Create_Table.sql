@@ -1,5 +1,3 @@
-# SQL Script Used To Create Publisher Table
-
 CREATE TABLE `CS_631`.`PROCEEDINGS`(
     `DOCID` VARCHAR(50) NOT NULL,
     `CDATE` DATE NOT NULL,
