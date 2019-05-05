@@ -1,0 +1,6 @@
+INSERT INTO `READER`(`READERID`, `RTYPE`, `RNAME`, `ADDRESS`) VALUES ("R-125","Student","A Bill","12 Bill St, Newark, NJ");
+INSERT INTO `READER`(`READERID`, `RTYPE`, `RNAME`, `ADDRESS`) VALUES ("R-435","Senior","B Hill","423 Orange St, Austun, TX");
+INSERT INTO `READER`(`READERID`, `RTYPE`, `RNAME`, `ADDRESS`) VALUES ("R-438","Student","C Jill","5423 Now St, NYC, NY");
+INSERT INTO `READER`(`READERID`, `RTYPE`, `RNAME`, `ADDRESS`) VALUES ("R-724","Student","U Cill","13 G Lane, Newark, NJ");
+INSERT INTO `READER`(`READERID`, `RTYPE`, `RNAME`, `ADDRESS`) VALUES ("R-325","Student","C Kill","5 C St, Newark, NJ");
+INSERT INTO `READER`(`READERID`, `RTYPE`, `RNAME`, `ADDRESS`) VALUES ("R-856","Staff","F Man","5423 Bye St, NYC, NY");
