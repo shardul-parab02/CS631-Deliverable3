@@ -42,9 +42,6 @@ $fine = 0;
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-      // echo $row['BDTIME'];
-      // echo "<br> compare date: ";
-      // echo date('Y-m-d', strtotime(date("Y/m/d"). ' + 7 days'));
       $today_date = date("Y/m/d");
       $due_by = date('Y-m-d', strtotime($row['BDTIME']. ' + 7 days'));
 
@@ -61,6 +58,20 @@ if ($result->num_rows > 0) {
     echo "0 results";
 }
 
+
+echo "<br><br><b>Documents Currently Borrowed By Reader: </b>";
+$sql_list_of_borrowed_books = "SELECT * FROM BORROWS WHERE READERID = '$reader_id'";
+$result = $conn->query($sql_list_of_borrowed_books);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      echo "<br>DOCID: " . $row["DOCID"] . " Current Status: Borrowed";
+
+    }
+} else {
+    echo "0 results";
+}
 
 $conn->close();
 ?>
@@ -88,6 +99,6 @@ By Publisher Name (Example: PublishersRUs): <input type="text" name="input_docum
 
 
 
-<br><a href="/index.php">Go Home</a>
+<br><a href="/index.php">Quit</a>
 </body>
 </html>

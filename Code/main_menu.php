@@ -20,7 +20,7 @@ Password: <input type="password" name="password">
 </form>
 <br><a href="/main_menu">Main Menu (Entry to application)</a>
 
-<br><a href="/index.php">Go Home</a>
+<br><a href="/index.php">Quit</a>
 
 
 </body>
