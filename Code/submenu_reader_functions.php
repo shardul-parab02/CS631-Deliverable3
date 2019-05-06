@@ -33,6 +33,36 @@ if ($result_login->num_rows > 0) {
   echo "Wrong Reader ID";
   exit();
 }
+
+echo "<br><b>Fines Owed: $</b>";
+
+$sql_fines_borrowed = "SELECT * FROM BORROWS WHERE READERID = '$reader_id'";
+$result = $conn->query($sql_fines_borrowed);
+$fine = 0;
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+      // echo $row['BDTIME'];
+      // echo "<br> compare date: ";
+      // echo date('Y-m-d', strtotime(date("Y/m/d"). ' + 7 days'));
+      $today_date = date("Y/m/d");
+      $due_by = date('Y-m-d', strtotime($row['BDTIME']. ' + 7 days'));
+
+      if ($today_date < $due_by){
+        $fine += $fine + 10;
+      }
+      else {
+        $fine = 0;
+      }
+
+    }
+    echo $fine;
+} else {
+    echo "0 results";
+}
+
+
+$conn->close();
 ?>
 
 
@@ -53,6 +83,8 @@ By Document Title (Example: Overwatch): <input type="text" name="input_document_
 By Publisher Name (Example: PublishersRUs): <input type="text" name="input_document_pub_name">
 <input type="submit">
 </form>
+
+<br>
 
 
 

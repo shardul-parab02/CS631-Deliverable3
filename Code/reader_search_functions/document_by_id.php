@@ -23,10 +23,12 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo "DOCID: " . $row["DOCID"]. "<br>TITLE: " . $row["TITLE"]."<br>PDATE: " . $row["PDATE"]. "<br>PUBLISHERID: " . $row["PUBLISHERID"]. "<br>";
+        echo "<br>DOCID: " . $row["DOCID"]. "<br>TITLE: " . $row["TITLE"]."<br>PDATE: " . $row["PDATE"]. "<br>PUBLISHERID: " . $row["PUBLISHERID"]. "<br>";
+        echo '<a href ="/doc_status_functions/checkout_document.php?DOCID='.$row["DOCID"].'">Checkout</a>';
     }
 } else {
     echo "0 results";
 }
 $conn->close();
 ?>
+<br><a href="/index.php">Go Home</a>

@@ -16,23 +16,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql_check_reader_id = "SELECT * FROM READER WHERE READERID = '".$reader_id."'";
-$result_login = $conn->query($sql_check_reader_id);
-
-if ($result_login->num_rows > 0) {
-    // output data of each row
-    while($row = $result_login->fetch_assoc()) {
-        #echo "PUBLISHERID: " . $row["PUBLISHERID"];
-        if ($row["READERID"] == $reader_id){
-          echo "You have entered valid use name and password";
-        }
-
-    }
-} else {
-  echo "Wrong Reader ID";
-  exit();
-}
-
 
 
 echo "<br>";
