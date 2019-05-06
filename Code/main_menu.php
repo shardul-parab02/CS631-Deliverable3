@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-
-
-<?php
-
-?>
 <h2>Reader Functions</h2>
 <form action="submenu_reader_functions.php" method="get">
 Reader ID: <input type="text" name="reader_id">
