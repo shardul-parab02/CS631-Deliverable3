@@ -1,4 +1,5 @@
 <h1>Seach By Document Name</h1>
+<b>This page isn't an exact search field. It's searches for similar named documents.<br></b>
 <?php
 session_start();
 $reader_id = $_SESSION['reader_id'];
@@ -15,7 +16,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo $required_doc;
 
 $sql = "SELECT * FROM DOCUMENT WHERE TITLE LIKE '%{$required_doc}%'";
 $result = $conn->query($sql);

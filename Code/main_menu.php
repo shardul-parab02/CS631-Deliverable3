@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <body>
+<?php
+
+?>
 <h2>Reader Functions</h2>
 <form action="submenu_reader_functions.php" method="get">
-Reader ID: <input type="text" name="reader_id">
+Reader ID (Example: R-125): <input type="text" name="reader_id">
 <input type="submit">
 </form>
 
